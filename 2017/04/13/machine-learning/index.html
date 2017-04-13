@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>machine_learning | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD  正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题 L1 也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可以">
+  <meta name="description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
 <meta name="keywords" content="survey mark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine_learning">
 <meta property="og:url" content="http://john2016.github.io/2017/04/13/machine-learning/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD  正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题 L1 也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可以">
-<meta property="og:updated_time" content="2017-04-13T07:04:55.817Z">
+<meta property="og:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
+<meta property="og:updated_time" content="2017-04-13T07:13:01.121Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="machine_learning">
-<meta name="twitter:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD  正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题 L1 也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可以">
+<meta name="twitter:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -50,10 +50,10 @@
 			<img src="/img/header.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Yuan li</a></h1>
+		  <h1 class="header-author"><a href="/">渊澄取映</a></h1>
 		</hgroup>
 		
-		<p class="header-subtitle">Blog of Yuan</p>
+		<p class="header-subtitle">学无止境</p>
 		
 
 		<nav class="header-menu">
@@ -108,10 +108,10 @@
 				<img src="/img/header.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Yuan li</h1>
+			  <h1 class="header-author js-header-author">渊澄取映</h1>
 			</hgroup>
 			
-			<p class="header-subtitle"><i class="icon icon-quo-left"></i>Blog of Yuan<i class="icon icon-quo-right"></i></p>
+			<p class="header-subtitle"><i class="icon icon-quo-left"></i>学无止境<i class="icon icon-quo-right"></i></p>
 			
 			
 			
@@ -176,21 +176,25 @@
       
         <h1 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h1><h2 id="随机投影"><a href="#随机投影" class="headerlink" title="随机投影"></a>随机投影</h2><blockquote>
 <p> 一种降维方式，用在欧式空间中，具有distance preserve的特性。<br> 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。</p>
-<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2><hr>
-</blockquote>
+<h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2></blockquote>
 <h1 id="正则约束"><a href="#正则约束" class="headerlink" title="正则约束"></a>正则约束</h1><p>目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题</p>
 <h2 id="L0"><a href="#L0" class="headerlink" title="L0"></a>L0</h2><blockquote>
 <p> 稀疏约束，NP问题</p>
-<h2 id="L1"><a href="#L1" class="headerlink" title="L1"></a>L1</h2><p> 也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可以等价于L0<br> 截断效应</p>
-<h2 id="L2"><a href="#L2" class="headerlink" title="L2"></a>L2</h2><p> ridge regression，岭回归<br> 放缩效应（在球半径上），较慢</p>
-<h2 id="LASSO"><a href="#LASSO" class="headerlink" title="LASSO"></a>LASSO</h2><p> 最小二乘估计（）的改进版<br> 基本思想:在回归系数的绝对值之和小于一个常数的约束条件下，使残差平方和最小化，从而能够产生某些严格等于0 的回归系数，得到可以解释的模型.<br> shrinkage &amp; selection</p>
-<hr>
+</blockquote>
+<h2 id="L1"><a href="#L1" class="headerlink" title="L1"></a>L1</h2><blockquote>
+<p> 也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可以等价于L0<br> 截断效应</p>
+</blockquote>
+<h2 id="L2"><a href="#L2" class="headerlink" title="L2"></a>L2</h2><blockquote>
+<p> ridge regression，岭回归<br> 放缩效应（在球半径上），较慢</p>
+</blockquote>
+<h2 id="LASSO"><a href="#LASSO" class="headerlink" title="LASSO"></a>LASSO</h2><blockquote>
+<p> 最小二乘估计（）的改进版<br> 基本思想:在回归系数的绝对值之和小于一个常数的约束条件下，使残差平方和最小化，从而能够产生某些严格等于0 的回归系数，得到可以解释的模型.<br> shrinkage &amp; selection</p>
 </blockquote>
 <h1 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h1><h2 id="拉普拉斯分布"><a href="#拉普拉斯分布" class="headerlink" title="拉普拉斯分布"></a>拉普拉斯分布</h2><hr>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><blockquote>
 <p> MATLAB的运算速度是标杆，常规方法中最快的<br> 需要注意，不同的库在不同类型运算（乘、逆）和不同类型矩阵（是否稀疏）中表现不同。<br> 另外学术界也在不断研究新的优化算法，目前的理论最优复杂度是O(N^2.7)（? n<em>n</em>log n）<br> 实际应用中，还要考虑多进程、多线程、内存优化、cache、硬件、GPU等</p>
-<h3 id="c-矩阵运算与凸优化库"><a href="#c-矩阵运算与凸优化库" class="headerlink" title="c++矩阵运算与凸优化库"></a>c++矩阵运算与凸优化库</h3></blockquote>
-<ol>
+</blockquote>
+<h3 id="c-矩阵运算与凸优化库"><a href="#c-矩阵运算与凸优化库" class="headerlink" title="c++矩阵运算与凸优化库"></a>c++矩阵运算与凸优化库</h3><ol>
 <li>MKI， by Intel，matlab的矩阵运算基于这个库并不算更新</li>
 <li>BLAST， 有GPU版本，cuBLAS</li>
 <li>openBLAS</li>
@@ -200,8 +204,12 @@
 <li>armadillo（据说跟matlab同量极，0.2 vs 0.7）</li>
 <li>ViennaCL：并行矩阵计算，提供接口到上面的库</li>
 <li>PETSc：大规模并行科学计算</li>
-<li>其他：MTL4、Eigen（SVD较慢）、GSL、SuiteSparse(针对sparse)<br>部分数据<a href="http://nghiaho.com/?p=954" target="_blank" rel="external">来源</a><br>Stackexchange上的一个<a href="http://scicomp.stackexchange.com/questions/351/recommendations-for-a-usable-fast-c-matrix-library" target="_blank" rel="external">参考</a><h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3>numpy，略弱于matlab，可链接MKL提速，在GPU运用方面强于matlab<h3 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h3>Jama<h2 id="凸优化"><a href="#凸优化" class="headerlink" title="凸优化"></a>凸优化</h2><h3 id="matlab优化工具包"><a href="#matlab优化工具包" class="headerlink" title="matlab优化工具包"></a>matlab优化工具包</h3>CVX</li>
+<li>其他：MTL4、Eigen（SVD较慢）、GSL、SuiteSparse(针对sparse)</li>
 </ol>
+<p>以上数据部分来源于<a href="http://nghiaho.com/?p=954" target="_blank" rel="external">某博客</a><br>Stackexchange上的一个<a href="http://scicomp.stackexchange.com/questions/351/recommendations-for-a-usable-fast-c-matrix-library" target="_blank" rel="external">参考帖</a></p>
+<h3 id="python"><a href="#python" class="headerlink" title="python"></a>python</h3><p>numpy，略弱于matlab，可链接MKL提速，在GPU运用方面强于matlab</p>
+<h3 id="JAVA"><a href="#JAVA" class="headerlink" title="JAVA"></a>JAVA</h3><p>Jama</p>
+<h2 id="凸优化"><a href="#凸优化" class="headerlink" title="凸优化"></a>凸优化</h2><h3 id="matlab优化工具包"><a href="#matlab优化工具包" class="headerlink" title="matlab优化工具包"></a>matlab优化工具包</h3><p>CVX</p>
 <blockquote>
 <p> 另外关于c++，STL和Boost都是很好的东西，最新的c++，如c++14和c++17都在吸收其特性，其中实现的算法性能多数情况好于自己去写，另外还有一些更新的库在不断发展，不过尚未成为工业标准，因此除非特殊项目（如片上系统限制bin大小），都应该使用这两种库。</p>
 <hr>
@@ -345,7 +353,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Yuan li
+    		&copy; 2017 渊澄取映
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten

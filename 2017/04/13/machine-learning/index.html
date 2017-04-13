@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>machine_learning | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
+  <meta name="description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 / SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下">
 <meta name="keywords" content="survey mark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="machine_learning">
 <meta property="og:url" content="http://john2016.github.io/2017/04/13/machine-learning/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
-<meta property="og:updated_time" content="2017-04-13T07:13:01.121Z">
+<meta property="og:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 / SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下">
+<meta property="og:updated_time" content="2017-04-13T12:50:24.749Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="machine_learning">
-<meta name="twitter:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下才可">
+<meta name="twitter:description" content="数据降维随机投影  一种降维方式，用在欧式空间中，具有distance preserve的特性。 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。 / SVD 正则约束目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题 L0  稀疏约束，NP问题  L1  也可以达到稀疏效果，L0的最优凸近似，容易求解，注意一定条件下">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -175,7 +175,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h1><h2 id="随机投影"><a href="#随机投影" class="headerlink" title="随机投影"></a>随机投影</h2><blockquote>
-<p> 一种降维方式，用在欧式空间中，具有distance preserve的特性。<br> 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。</p>
+<p> 一种降维方式，用在欧式空间中，具有distance preserve的特性。<br> 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。<br> /</p>
 <h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2></blockquote>
 <h1 id="正则约束"><a href="#正则约束" class="headerlink" title="正则约束"></a>正则约束</h1><p>目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题</p>
 <h2 id="L0"><a href="#L0" class="headerlink" title="L0"></a>L0</h2><blockquote>
@@ -195,13 +195,13 @@
 <p> MATLAB的运算速度是标杆，常规方法中最快的<br> 需要注意，不同的库在不同类型运算（乘、逆）和不同类型矩阵（是否稀疏）中表现不同。<br> 另外学术界也在不断研究新的优化算法，目前的理论最优复杂度是O(N^2.7)（? n<em>n</em>log n）<br> 实际应用中，还要考虑多进程、多线程、内存优化、cache、硬件、GPU等</p>
 </blockquote>
 <h3 id="c-矩阵运算与凸优化库"><a href="#c-矩阵运算与凸优化库" class="headerlink" title="c++矩阵运算与凸优化库"></a>c++矩阵运算与凸优化库</h3><ol>
-<li>MKI， by Intel，matlab的矩阵运算基于这个库并不算更新</li>
-<li>BLAST， 有GPU版本，cuBLAS</li>
+<li>MKL， by Intel，matlab的矩阵运算基于这个库并不算更新，△</li>
+<li>BLAS， 有GPU版本，cuBLAS，△</li>
 <li>openBLAS</li>
-<li>IBM Boost - uBLAS</li>
+<li>IBM Boost - uBLAS，据说不快</li>
 <li>OpenCV：不适合求逆，乘法操作也没有优化</li>
-<li>lapack</li>
-<li>armadillo（据说跟matlab同量极，0.2 vs 0.7）</li>
+<li>lapack，△</li>
+<li>armadillo（据说跟matlab同量极，0.2 vs 0.7），△</li>
 <li>ViennaCL：并行矩阵计算，提供接口到上面的库</li>
 <li>PETSc：大规模并行科学计算</li>
 <li>其他：MTL4、Eigen（SVD较慢）、GSL、SuiteSparse(针对sparse)</li>
@@ -234,6 +234,11 @@
                   <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃药<i class="icon icon-quo-right"></i></p>
                   <div class="reward-box">
                     
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/img/weixin_pay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
                     
                   </div>
                 </span>
@@ -331,6 +336,11 @@
       </div>
     </a>
   
+  
+    <a href="/2017/04/13/optimize-note/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">优化笔记</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -484,15 +494,15 @@
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度</a>
             </li>
           
             <li class="search-li">
-              <a href="http://www.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谷歌</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://scholar.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谷歌学术</a>
             </li>
           
             <li class="search-li">

@@ -151,6 +151,60 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-optimize-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/13/optimize-note/">优化笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/13/optimize-note/" class="archive-article-date">
+  	<time datetime="2017-04-13T08:39:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><table><br>    <th><br>        </th><td> – </td><br>        <td> – </td><br>    <br>    <tr><br>        <td> Lagrange </td><br>        <td> 等式约束 </td><br>    </tr><br>    <tr><br>        <td> KKT </td><br>        <td> 含有不等式约束 </td><br>    </tr><br></table></p>
+<blockquote>
+<p>这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。</p>
+</blockquote>
+<h2 id="拉格朗日"><a href="#拉格朗日" class="headerlink" title="拉格朗日"></a>拉格朗日</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/13/optimize-note/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-machine-learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -172,7 +226,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="数据降维"><a href="#数据降维" class="headerlink" title="数据降维"></a>数据降维</h1><h2 id="随机投影"><a href="#随机投影" class="headerlink" title="随机投影"></a>随机投影</h2><blockquote>
-<p> 一种降维方式，用在欧式空间中，具有distance preserve的特性。<br> 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。</p>
+<p> 一种降维方式，用在欧式空间中，具有distance preserve的特性。<br> 具体做法是用数据矩阵乘上一个投影矩阵，投影矩阵随机产生，可以从正态分布、伯努利分布等分布中产生。<br> /</p>
 <h2 id="SVD"><a href="#SVD" class="headerlink" title="SVD"></a>SVD</h2></blockquote>
 <h1 id="正则约束"><a href="#正则约束" class="headerlink" title="正则约束"></a>正则约束</h1><p>目的在于缩小解空间，即regularization，以此来避免无穷解和过拟合的问题</p>
 <h2 id="L0"><a href="#L0" class="headerlink" title="L0"></a>L0</h2><blockquote>
@@ -192,13 +246,13 @@
 <p> MATLAB的运算速度是标杆，常规方法中最快的<br> 需要注意，不同的库在不同类型运算（乘、逆）和不同类型矩阵（是否稀疏）中表现不同。<br> 另外学术界也在不断研究新的优化算法，目前的理论最优复杂度是O(N^2.7)（? n<em>n</em>log n）<br> 实际应用中，还要考虑多进程、多线程、内存优化、cache、硬件、GPU等</p>
 </blockquote>
 <h3 id="c-矩阵运算与凸优化库"><a href="#c-矩阵运算与凸优化库" class="headerlink" title="c++矩阵运算与凸优化库"></a>c++矩阵运算与凸优化库</h3><ol>
-<li>MKI， by Intel，matlab的矩阵运算基于这个库并不算更新</li>
-<li>BLAST， 有GPU版本，cuBLAS</li>
+<li>MKL， by Intel，matlab的矩阵运算基于这个库并不算更新，△</li>
+<li>BLAS， 有GPU版本，cuBLAS，△</li>
 <li>openBLAS</li>
-<li>IBM Boost - uBLAS</li>
+<li>IBM Boost - uBLAS，据说不快</li>
 <li>OpenCV：不适合求逆，乘法操作也没有优化</li>
-<li>lapack</li>
-<li>armadillo（据说跟matlab同量极，0.2 vs 0.7）</li>
+<li>lapack，△</li>
+<li>armadillo（据说跟matlab同量极，0.2 vs 0.7），△</li>
 <li>ViennaCL：并行矩阵计算，提供接口到上面的库</li>
 <li>PETSc：大规模并行科学计算</li>
 <li>其他：MTL4、Eigen（SVD较慢）、GSL、SuiteSparse(针对sparse)</li>
@@ -654,15 +708,15 @@ end
         <ul class="search-ul">
           
             <li class="search-li">
-              <a href="https://www.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
+              <a href="https://www.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>百度</a>
             </li>
           
             <li class="search-li">
-              <a href="http://www.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
+              <a href="http://www.baidu.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谷歌</a>
             </li>
           
             <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
+              <a href="http://scholar.google.com/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>谷歌学术</a>
             </li>
           
             <li class="search-li">

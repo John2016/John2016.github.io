@@ -151,6 +151,130 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-protobuf-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/15/protobuf-install/">protobuf安装笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/15/protobuf-install/" class="archive-article-date">
+  	<time datetime="2017-04-15T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："><a href="#本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：" class="headerlink" title="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："></a>本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：</h2><p>‘’’<br>    <em>非root，非sudo</em> <br><br>    <em>没有网络</em> <br><br>    <em>redhat</em><br>‘’’</p>
+<p>‘’’ bash<br>    $ ./autogen.sh<br>    autoreconf -f -i -Wall,no-obsolete<br>    configure.ac:30: error: possibly undefined macro: AC_PROG_LIBTOOL<br>    If this token and others are legitimate, please use m4_pattern_allow.<br>    See the Autoconf documentation.<br>    autoreconf: /usr/bin/autoconf failed with exit status: 1<br>‘’’<br>查资料发现绝大多数的解决方案都是安装libtool，然而我已经安装过了：<br>‘’’ bash<br>    $ libtool –version<br>    libtool (GNU libtool) 2.4.6<br>    Written by Gordon Matzigkeit, 1996<br>‘’’</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">环境配置， 测试</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/15/protobuf-install/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-GAN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/14/GAN/">生成对抗网络GAN笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/14/GAN/" class="archive-article-date">
+  	<time datetime="2017-04-14T01:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/14/GAN/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-optimize-note" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -241,6 +365,13 @@
 <h2 id="LASSO"><a href="#LASSO" class="headerlink" title="LASSO"></a>LASSO</h2><blockquote>
 <p> 最小二乘估计（）的改进版<br> 基本思想:在回归系数的绝对值之和小于一个常数的约束条件下，使残差平方和最小化，从而能够产生某些严格等于0 的回归系数，得到可以解释的模型.<br> shrinkage &amp; selection</p>
 </blockquote>
+<h1 id="聚类"><a href="#聚类" class="headerlink" title="聚类"></a>聚类</h1><h2 id="Spectra-Clustering"><a href="#Spectra-Clustering" class="headerlink" title="Spectra Clustering"></a>Spectra Clustering</h2><ol>
+<li>根据数据构造一个 Graph ，Graph 的每一个节点对应一个数据点，将相似的点连接起来，并且边的权重用于表示数据之间的相似度。把这个 Graph 用邻接矩阵的形式表示出来，记为 W 。一个最偷懒的办法就是：直接用我们前面在 K-medoids 中用的相似度矩阵作为 W 。</li>
+<li>把 W 的每一列元素加起来得到 N 个数，把它们放在对角线上（其他地方都是零），组成一个 N\times N 的矩阵，记为 D 。并令 L = D-W 。</li>
+<li>求出 L 的前 k 个特征值（在本文中，除非特殊说明，否则“前 k 个”指按照特征值的大小从小到大的顺序）{\lambda}<em>{i=1}^k 以及对应的特征向量 {\mathbf{v}}</em>{i=1}^k 。</li>
+<li>把这 k 个特征（列）向量排列在一起组成一个 N\times k 的矩阵，将其中每一行看作 k 维空间中的一个向量，并使用 K-means 算法进行聚类。聚类的结果中每一行所属的类别就是原来 Graph 中的节点亦即最初的 N 个数据点分别所属的类别。</li>
+</ol>
+<p>原理：Laplacian Eigenmap降维之后进行k-means；Normarlized cut，目标是同时考虑最小化cut边和划分平衡</p>
 <h1 id="分布"><a href="#分布" class="headerlink" title="分布"></a>分布</h1><h2 id="拉普拉斯分布"><a href="#拉普拉斯分布" class="headerlink" title="拉普拉斯分布"></a>拉普拉斯分布</h2><hr>
 <h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><h2 id="矩阵运算"><a href="#矩阵运算" class="headerlink" title="矩阵运算"></a>矩阵运算</h2><blockquote>
 <p> MATLAB的运算速度是标杆，常规方法中最快的<br> 需要注意，不同的库在不同类型运算（乘、逆）和不同类型矩阵（是否稀疏）中表现不同。<br> 另外学术界也在不断研究新的优化算法，目前的理论最优复杂度是O(N^2.7)（? n<em>n</em>log n）<br> 实际应用中，还要考虑多进程、多线程、内存优化、cache、硬件、GPU等</p>
@@ -268,6 +399,8 @@
 <h1 id="各语言运算效率对比"><a href="#各语言运算效率对比" class="headerlink" title="各语言运算效率对比"></a>各语言运算效率对比</h1><hr>
 <h1 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h1><ul>
 <li>matlab的MPI开发，一个工具是Poor Man’s Parallel Toolbox</li>
+<li>径向基函数，RBF，就是某种沿径向对称的标量函数，它的值(y)只依赖于变量(x)距原点距离的函数，能逼近任意非线性函数。最常用的径向基函数是高斯核函数。要明确高斯函数、径向基函数、核函数这三个概念之间的关系。</li>
+<li>匈牙利算法，用贪婪搜索寻找最大增广路径，继而解决最大匹配问题</li>
 </ul>
 
       
@@ -656,7 +789,15 @@ end
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">环境配置， 测试</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>protobuf安装笔记 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat* 123456$ ./autogen.shautoreconf -f -i -Wall,no-obsoleteconfigure.ac:30: error: possibly undefined macro: AC_PROG">
+  <meta name="description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat*              m4          1.4.18                  autoconf          2.63                  automake          1.11">
 <meta name="keywords" content="环境配置; 测试">
 <meta property="og:type" content="article">
 <meta property="og:title" content="protobuf安装笔记">
 <meta property="og:url" content="http://john2016.github.io/2017/04/15/protobuf-install/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat* 123456$ ./autogen.shautoreconf -f -i -Wall,no-obsoleteconfigure.ac:30: error: possibly undefined macro: AC_PROG">
-<meta property="og:updated_time" content="2017-04-15T13:23:06.559Z">
+<meta property="og:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat*              m4          1.4.18                  autoconf          2.63                  automake          1.11">
+<meta property="og:updated_time" content="2017-04-15T13:36:20.206Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="protobuf安装笔记">
-<meta name="twitter:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat* 123456$ ./autogen.shautoreconf -f -i -Wall,no-obsoleteconfigure.ac:30: error: possibly undefined macro: AC_PROG">
+<meta name="twitter:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123*非root，非sudo* &amp;lt;br&amp;gt;*没有网络* &amp;lt;br&amp;gt;*redhat*              m4          1.4.18                  autoconf          2.63                  automake          1.11">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -175,6 +175,8 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："><a href="#本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：" class="headerlink" title="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："></a>本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">*非root，非sudo* &lt;br&gt;</div><div class="line">*没有网络* &lt;br&gt;</div><div class="line">*redhat*</div></pre></td></tr></table></figure>
+<table><br>    <tr><br>        <td> m4 </td><br>        <td> 1.4.18 </td><br>    </tr><br>    <tr><br>        <td> autoconf </td><br>        <td> 2.63 </td><br>    </tr><br>    <tr><br>        <td> automake </td><br>        <td> 1.11.1 </td><br>    </tr><br>    <tr><br>        <td> libtool </td><br>        <td> 2.4.6 </td><br>    </tr><br>    <tr><br>        <td> protobuf </td><br>        <td> 3.0.2 </td><br>    </tr><br></table>
+
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ./autogen.sh</div><div class="line">autoreconf <span class="_">-f</span> -i -Wall,no-obsolete</div><div class="line">configure.ac:30: error: possibly undefined macro: AC_PROG_LIBTOOL</div><div class="line">If this token and others are legitimate, please use m4_pattern_allow.</div><div class="line">See the Autoconf documentation.</div><div class="line">autoreconf: /usr/bin/autoconf failed with <span class="built_in">exit</span> status: 1</div></pre></td></tr></table></figure>
 <p>查资料发现绝大多数的解决方案都是安装libtool，然而我已经安装过了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ libtool --version</div><div class="line">libtool (GNU libtool) 2.4.6</div><div class="line">Written by Gordon Matzigkeit, 1996</div></pre></td></tr></table></figure></p>
 
@@ -396,11 +398,11 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">

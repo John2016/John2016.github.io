@@ -171,13 +171,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："><a href="#本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：" class="headerlink" title="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下："></a>本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">非root，非sudo</div><div class="line">没有网络</div><div class="line">redhat</div></pre></td></tr></table></figure>
+        <h1 id="本文记录安装配置protobuff时遇到的问题及解决方案，"><a href="#本文记录安装配置protobuff时遇到的问题及解决方案，" class="headerlink" title="本文记录安装配置protobuff时遇到的问题及解决方案，"></a>本文记录安装配置protobuff时遇到的问题及解决方案，</h1><p>基本信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">非root，非sudo</div><div class="line">没有网络</div><div class="line">redhat</div></pre></td></tr></table></figure></p>
 <table><br>    <tr><br>        <td> m4 </td><br>        <td> 1.4.18 </td><br>    </tr><br>    <tr><br>        <td> autoconf </td><br>        <td> 2.63 </td><br>    </tr><br>    <tr><br>        <td> automake </td><br>        <td> 1.11.1 </td><br>    </tr><br>    <tr><br>        <td> libtool </td><br>        <td> 2.4.6 </td><br>    </tr><br>    <tr><br>        <td> protobuf </td><br>        <td> 3.0.2 </td><br>    </tr><br></table>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ./autogen.sh</div><div class="line">autoreconf <span class="_">-f</span> -i -Wall,no-obsolete</div><div class="line">configure.ac:30: error: possibly undefined macro: AC_PROG_LIBTOOL</div><div class="line">If this token and others are legitimate, please use m4_pattern_allow.</div><div class="line">See the Autoconf documentation.</div><div class="line">autoreconf: /usr/bin/autoconf failed with <span class="built_in">exit</span> status: 1</div></pre></td></tr></table></figure>
+<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ./autogen.sh</div><div class="line">autoreconf <span class="_">-f</span> -i -Wall,no-obsolete</div><div class="line">configure.ac:30: error: possibly undefined macro: AC_PROG_LIBTOOL</div><div class="line">If this token and others are legitimate, please use m4_pattern_allow.</div><div class="line">See the Autoconf documentation.</div><div class="line">autoreconf: /usr/bin/autoconf failed with <span class="built_in">exit</span> status: 1</div></pre></td></tr></table></figure>
 <p>查资料发现绝大多数的解决方案都是安装libtool，然而我已经安装过了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ libtool --version</div><div class="line">libtool (GNU libtool) 2.4.6</div><div class="line">Written by Gordon Matzigkeit, 1996</div></pre></td></tr></table></figure></p>
 <p>与工作机上的电脑比较，除了automake，其它几个软件包的版本并不旧，甚至更新<br>不同的是，工作机上，所有的软件都装在/usr/bin下，也并没有其它环境变量</p>
 <p>解决：将autoconf和automake都更新至最新版，并把所有软件都安装在~/usr下，编译通过</p>
+<h2 id="pkg-config"><a href="#pkg-config" class="headerlink" title="pkg-config"></a>pkg-config</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ldconfig</div><div class="line">ldconfig: /lib64/libpmi.so.0 不是符号连接</div><div class="line"></div><div class="line">ldconfig: 无法创建临时缓冲文件 /etc/ld.so.cache~: 权限不够</div></pre></td></tr></table></figure>
+<ol>
+<li><p>关于不是符号连接的问题，一般的解决方案是使用ln命令在目标位置创建软链接</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis libpmi.so.0</div><div class="line">libpmi.so: /lib64/libpmi.so /lib64/libpmi.so.0 /usr/local/lib/libpmi.so /usr/local/lib/libpmi.so.0</div></pre></td></tr></table></figure>
+</li>
+<li><p>关于第二个问题，权限不够，可以通过-C CACHE命令来指定缓存文件的地址，直接指定缓存文件名，而非目录</p>
+</li>
+<li>完成之后，添加PKG_SEARCH_PATH，位置为protobuf.pc所在位置</li>
+</ol>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>首先值得注意的是warning报错不一样，ubuntu中warning都是progma once，而这里则集中于inline和noinline的冲突定义<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.cpp(314): error: argument of <span class="built_in">type</span> <span class="string">"const char *"</span> is incompatible with parameter of <span class="built_in">type</span> <span class="string">"void *"</span></div><div class="line">            MPI_Send(assign_str.c_str(), assign_str.size(), MPI_CHAR, i, i, MPI_COMM_WORLD);</div></pre></td></tr></table></figure></p>
+<p>这里的问题是intel的icpc编译器更加严格，导致const <em> 和 </em>之间不能转换，解决方法：1）手动复制string到字符数组中；2）尝试采用const_cast函数去掉const标记</p>
 
       
 
@@ -794,11 +805,11 @@ end
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
              
               <li class="article-tag-list-item">

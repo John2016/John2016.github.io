@@ -263,7 +263,8 @@
 </ol>
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>首先值得注意的是warning报错不一样，ubuntu中warning都是progma once，而这里则集中于inline和noinline的冲突定义<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.cpp(314): error: argument of <span class="built_in">type</span> <span class="string">"const char *"</span> is incompatible with parameter of <span class="built_in">type</span> <span class="string">"void *"</span></div><div class="line">            MPI_Send(assign_str.c_str(), assign_str.size(), MPI_CHAR, i, i, MPI_COMM_WORLD);</div></pre></td></tr></table></figure></p>
 <p>这里的问题是intel的icpc编译器更加严格，导致const <em> 和 </em>之间不能转换，解决方法：1）手动复制string到字符数组中；2）尝试采用const_cast函数去掉const标记</p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>mpirun命令不可用，只能使用srun</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>mpirun命令不可用，只能使用srun<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Fatal error <span class="keyword">in</span> MPI_Init:</div><div class="line">Other MPI error, error stack:</div><div class="line">MPIR_Init_thread(411): Initialization failed</div><div class="line">(unknown)(): Other MPI error;</div></pre></td></tr></table></figure></p>
+<p>区分几个概念：tasks、jobs、nodes<br>目前能想到的，可能是因为mpi编译器、执行器的不同导致的</p>
 
       
 
@@ -748,15 +749,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
             
             <div class="clearfix"></div>

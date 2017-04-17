@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://john2016.github.io">
-  <title>protobuf安装笔记 | 渊澄取映</title>
+  <title>github+hexo博客搭建笔记 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
-<meta name="keywords" content="环境配置; 测试">
+  <meta name="description" content="生产环境搭建Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。  github注册，建立page性质的reposity 安装git与配置 安装npm npm安装hexo  第一篇博客 配置_config.yml 自带Hello World预览  主题更改 主题选择 主题配置 头像；关于，打赏">
+<meta name="keywords">
 <meta property="og:type" content="article">
-<meta property="og:title" content="protobuf安装笔记">
-<meta property="og:url" content="http://john2016.github.io/2017/04/15/protobuf-install/index.html">
+<meta property="og:title" content="github+hexo博客搭建笔记">
+<meta property="og:url" content="http://john2016.github.io/2017/04/17/construction/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
-<meta property="og:updated_time" content="2017-04-17T03:33:11.138Z">
+<meta property="og:description" content="生产环境搭建Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。  github注册，建立page性质的reposity 安装git与配置 安装npm npm安装hexo  第一篇博客 配置_config.yml 自带Hello World预览  主题更改 主题选择 主题配置 头像；关于，打赏">
+<meta property="og:updated_time" content="2017-04-17T07:16:30.792Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="protobuf安装笔记">
-<meta name="twitter:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
+<meta name="twitter:title" content="github+hexo博客搭建笔记">
+<meta name="twitter:description" content="生产环境搭建Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。  github注册，建立page性质的reposity 安装git与配置 安装npm npm安装hexo  第一篇博客 配置_config.yml 自带Hello World预览  主题更改 主题选择 主题配置 头像；关于，打赏">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -154,45 +154,50 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-protobuf-install" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-construction" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      protobuf安装笔记
+      github+hexo博客搭建笔记
     </h1>
   
 
         
-        <a href="/2017/04/15/protobuf-install/" class="archive-article-date">
-  	<time datetime="2017-04-15T12:27:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-15</time>
+        <a href="/2017/04/17/construction/" class="archive-article-date">
+  	<time datetime="2017-04-17T06:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="本文记录安装配置protobuff时遇到的问题及解决方案，"><a href="#本文记录安装配置protobuff时遇到的问题及解决方案，" class="headerlink" title="本文记录安装配置protobuff时遇到的问题及解决方案，"></a>本文记录安装配置protobuff时遇到的问题及解决方案，</h1><p>基本信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">非root，非sudo</div><div class="line">没有网络</div><div class="line">redhat</div></pre></td></tr></table></figure></p>
-<table><br>    <tr><br>        <td> m4 </td><br>        <td> 1.4.18 </td><br>    </tr><br>    <tr><br>        <td> autoconf </td><br>        <td> 2.63 </td><br>    </tr><br>    <tr><br>        <td> automake </td><br>        <td> 1.11.1 </td><br>    </tr><br>    <tr><br>        <td> libtool </td><br>        <td> 2.4.6 </td><br>    </tr><br>    <tr><br>        <td> protobuf </td><br>        <td> 3.0.2 </td><br>    </tr><br></table>
-
-<h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ./autogen.sh</div><div class="line">autoreconf <span class="_">-f</span> -i -Wall,no-obsolete</div><div class="line">configure.ac:30: error: possibly undefined macro: AC_PROG_LIBTOOL</div><div class="line">If this token and others are legitimate, please use m4_pattern_allow.</div><div class="line">See the Autoconf documentation.</div><div class="line">autoreconf: /usr/bin/autoconf failed with <span class="built_in">exit</span> status: 1</div></pre></td></tr></table></figure>
-<p>查资料发现绝大多数的解决方案都是安装libtool，然而我已经安装过了：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ libtool --version</div><div class="line">libtool (GNU libtool) 2.4.6</div><div class="line">Written by Gordon Matzigkeit, 1996</div></pre></td></tr></table></figure></p>
-<p>与工作机上的电脑比较，除了automake，其它几个软件包的版本并不旧，甚至更新<br>不同的是，工作机上，所有的软件都装在/usr/bin下，也并没有其它环境变量</p>
-<p>解决：将autoconf和automake都更新至最新版，并把所有软件都安装在~/usr下，编译通过</p>
-<h2 id="pkg-config"><a href="#pkg-config" class="headerlink" title="pkg-config"></a>pkg-config</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ldconfig</div><div class="line">ldconfig: /lib64/libpmi.so.0 不是符号连接</div><div class="line"></div><div class="line">ldconfig: 无法创建临时缓冲文件 /etc/ld.so.cache~: 权限不够</div></pre></td></tr></table></figure>
+        <h2 id="生产环境搭建"><a href="#生产环境搭建" class="headerlink" title="生产环境搭建"></a>生产环境搭建</h2><p>Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。</p>
 <ol>
-<li><p>关于不是符号连接的问题，一般的解决方案是使用ln命令在目标位置创建软链接</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ whereis libpmi.so.0</div><div class="line">libpmi.so: /lib64/libpmi.so /lib64/libpmi.so.0 /usr/local/lib/libpmi.so /usr/local/lib/libpmi.so.0</div></pre></td></tr></table></figure>
-</li>
-<li><p>关于第二个问题，权限不够，可以通过-C CACHE命令来指定缓存文件的地址，直接指定缓存文件名，而非目录</p>
-</li>
-<li>完成之后，添加PKG_SEARCH_PATH，位置为protobuf.pc所在位置</li>
+<li>github注册，建立page性质的reposity</li>
+<li>安装git与配置</li>
+<li>安装npm</li>
+<li>npm安装hexo</li>
 </ol>
-<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>首先值得注意的是warning报错不一样，ubuntu中warning都是progma once，而这里则集中于inline和noinline的冲突定义<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.cpp(314): error: argument of <span class="built_in">type</span> <span class="string">"const char *"</span> is incompatible with parameter of <span class="built_in">type</span> <span class="string">"void *"</span></div><div class="line">            MPI_Send(assign_str.c_str(), assign_str.size(), MPI_CHAR, i, i, MPI_COMM_WORLD);</div></pre></td></tr></table></figure></p>
-<p>这里的问题是intel的icpc编译器更加严格，导致const <em> 和 </em>之间不能转换，解决方法：1）手动复制string到字符数组中；2）尝试采用const_cast函数去掉const标记</p>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>mpirun命令不可用，只能使用srun</p>
+<h2 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h2><ol>
+<li>配置_config.yml</li>
+<li>自带Hello World预览</li>
+</ol>
+<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><ol>
+<li>主题选择</li>
+<li>主题配置<br> 头像；关于，打赏</li>
+</ol>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><ol>
+<li>hexo new</li>
+<li>hexo g/generate</li>
+<li>hexo d/deploy</li>
+</ol>
+<h2 id="添加评论模块"><a href="#添加评论模块" class="headerlink" title="添加评论模块"></a>添加评论模块</h2><ol>
+<li>多说即将关闭</li>
+<li>可选项：<br> <a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a>,<br><br> <a href="https://gentie.163.com/" target="_blank" rel="external">网易云跟帖</a>,<br><br> <a href="https://disqus.com/" target="_blank" rel="external">disqus</a></li>
+</ol>
 
       
 
@@ -227,17 +232,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">环境配置; 测试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -288,7 +282,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/15/protobuf-install/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/17/construction/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -302,20 +296,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/14/GAN/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/15/protobuf-install/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          生成对抗网络GAN笔记
+          protobuf安装笔记
         
       </div>
     </a>
   
-  
-    <a href="/2017/04/17/construction/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">github+hexo博客搭建笔记</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

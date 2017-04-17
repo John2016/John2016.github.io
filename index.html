@@ -151,6 +151,80 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-construction" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/17/construction/">github+hexo博客搭建笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/17/construction/" class="archive-article-date">
+  	<time datetime="2017-04-17T06:58:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="生产环境搭建"><a href="#生产环境搭建" class="headerlink" title="生产环境搭建"></a>生产环境搭建</h2><p>Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。</p>
+<ol>
+<li>github注册，建立page性质的reposity</li>
+<li>安装git与配置</li>
+<li>安装npm</li>
+<li>npm安装hexo</li>
+</ol>
+<h2 id="第一篇博客"><a href="#第一篇博客" class="headerlink" title="第一篇博客"></a>第一篇博客</h2><ol>
+<li>配置_config.yml</li>
+<li>自带Hello World预览</li>
+</ol>
+<h2 id="主题更改"><a href="#主题更改" class="headerlink" title="主题更改"></a>主题更改</h2><ol>
+<li>主题选择</li>
+<li>主题配置<br> 头像；关于，打赏</li>
+</ol>
+<h2 id="写博客"><a href="#写博客" class="headerlink" title="写博客"></a>写博客</h2><ol>
+<li>hexo new</li>
+<li>hexo g/generate</li>
+<li>hexo d/deploy</li>
+</ol>
+<h2 id="添加评论模块"><a href="#添加评论模块" class="headerlink" title="添加评论模块"></a>添加评论模块</h2><ol>
+<li>多说即将关闭</li>
+<li>可选项：<br> <a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a>,<br><br> <a href="https://gentie.163.com/" target="_blank" rel="external">网易云跟帖</a>,<br><br> <a href="https://disqus.com/" target="_blank" rel="external">disqus</a></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/17/construction/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-protobuf-install" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -189,6 +263,7 @@
 </ol>
 <h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>首先值得注意的是warning报错不一样，ubuntu中warning都是progma once，而这里则集中于inline和noinline的冲突定义<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">main.cpp(314): error: argument of <span class="built_in">type</span> <span class="string">"const char *"</span> is incompatible with parameter of <span class="built_in">type</span> <span class="string">"void *"</span></div><div class="line">            MPI_Send(assign_str.c_str(), assign_str.size(), MPI_CHAR, i, i, MPI_COMM_WORLD);</div></pre></td></tr></table></figure></p>
 <p>这里的问题是intel的icpc编译器更加严格，导致const <em> 和 </em>之间不能转换，解决方法：1）手动复制string到字符数组中；2）尝试采用const_cast函数去掉const标记</p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>mpirun命令不可用，只能使用srun</p>
 
       
 
@@ -567,138 +642,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2017/04/12/matlab-ssc-note/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-md-study" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/11/md-study/">MARKDOWN学习</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/11/md-study/" class="archive-article-date">
-  	<time datetime="2017-04-11T13:53:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1-关于HTML"><a href="#1-关于HTML" class="headerlink" title="1. 关于HTML"></a>1. 关于HTML</h2><h2 id="2-BlockQuotes"><a href="#2-BlockQuotes" class="headerlink" title="2. BlockQuotes"></a>2. BlockQuotes</h2><blockquote>
-<p>This is a blockquote with two paragraphs. Lorem ipsum dolor sit amet,<br>consectetuer adipiscing elit. </p>
-<blockquote>
-<p>Aliquam hendrerit mi posuere lectus.Vestibulum enim wisi, viverra nec, fringilla in, laoreet vitae, risus.</p>
-<blockquote>
-<p>Donec sit amet nisl. Aliquam semper ipsum sit amet velit. Suspendisse<br>id sem consectetuer libero luctus adipiscing.</p>
-</blockquote>
-</blockquote>
-</blockquote>
-<h2 id="3-列表"><a href="#3-列表" class="headerlink" title="3. 列表"></a>3. 列表</h2><ul>
-<li>赵</li>
-<li>钱</li>
-<li>孙</li>
-<li>李<br>或者这里用+，-符号</li>
-</ul>
-<ol>
-<li>花</li>
-<li>鸟</li>
-<li>鱼</li>
-<li>虫</li>
-</ol>
-<h2 id="4-代码"><a href="#4-代码" class="headerlink" title="4. 代码"></a>4. 代码</h2><pre><code>tell application &quot;Foo&quot;
-    this is pesu code
-end
-</code></pre><h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5. 分割线"></a>5. 分割线</h2><hr>
-<h2 id="上面是第一个分割线"><a href="#上面是第一个分割线" class="headerlink" title="上面是第一个分割线"></a>上面是第一个分割线</h2><p>第二个</p>
-<hr>
-<p>第三个</p>
-<h2 id="6-区段元素"><a href="#6-区段元素" class="headerlink" title="6. 区段元素"></a>6. 区段元素</h2><p>未完待续…</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/11/md-study/">展开 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/11/first-blog/">第一篇文章</a>
-    </h1>
-  
-
-        
-        <a href="/2017/04/11/first-blog/" class="archive-article-date">
-  	<time datetime="2017-04-11T13:23:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="大标题1"><a href="#大标题1" class="headerlink" title="大标题1"></a>大标题1</h2><h3 id="小标题1"><a href="#小标题1" class="headerlink" title="小标题1"></a>小标题1</h3><figure class="highlight matlab"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">lambda</span> = <span class="title">estimate_lambda</span><span class="params">(X)</span></span></div><div class="line">    M = <span class="built_in">size</span>(X,<span class="number">1</span>);</div><div class="line">    lambda = <span class="number">1</span>/<span class="built_in">sqrt</span>(M);</div><div class="line"><span class="keyword">end</span></div></pre></td></tr></table></figure>
-<h2 id="大标题2"><a href="#大标题2" class="headerlink" title="大标题2"></a>大标题2</h2><h3 id="小标题1-1"><a href="#小标题1-1" class="headerlink" title="小标题1"></a>小标题1</h3><figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line">    <span class="keyword">return</span> <span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h3 id="小标题2"><a href="#小标题2" class="headerlink" title="小标题2"></a>小标题2</h3><h3 id="—"><a href="#—" class="headerlink" title="—"></a>—</h3><p>下划线之后</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/04/11/first-blog/">展开 >></a>
         </p>
       
 

@@ -273,6 +273,8 @@
 <li>需要指定具体节点，因为有些节点不可用但没有显示</li>
 <li>之前有时会卡住，这时输入该输入的内容就行，并不是卡住了</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -o main *.h *.cc *.cpp `pkg-config --cflags --libs protobuf`</div><div class="line"></div><div class="line">$ srun --job-name=spectra_cluster --label -w ib-node[129-148] --output=ms_out.txt main</div></pre></td></tr></table></figure>
+<p>根据实验结果判断，–output只会在每一个进程结束时写入所有输出，而非实时写入</p>
 
       
 

@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://john2016.github.io/2017/04/15/protobuf-install/index.html">
 <meta property="og:site_name" content="渊澄取映">
 <meta property="og:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
-<meta property="og:updated_time" content="2017-04-18T02:52:13.629Z">
+<meta property="og:updated_time" content="2017-04-18T10:39:34.728Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="protobuf安装笔记">
 <meta name="twitter:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
@@ -202,6 +202,8 @@
 <li>需要指定具体节点，因为有些节点不可用但没有显示</li>
 <li>之前有时会卡住，这时输入该输入的内容就行，并不是卡住了</li>
 </ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -o main *.h *.cc *.cpp `pkg-config --cflags --libs protobuf`</div><div class="line"></div><div class="line">$ srun --job-name=spectra_cluster --label -w ib-node[129-148] --output=ms_out.txt main</div></pre></td></tr></table></figure>
+<p>根据实验结果判断，–output只会在每一个进程结束时写入所有输出，而非实时写入</p>
 
       
 

@@ -265,6 +265,14 @@
 <p>这里的问题是intel的icpc编译器更加严格，导致const <em> 和 </em>之间不能转换，解决方法：1）手动复制string到字符数组中；2）尝试采用const_cast函数去掉const标记</p>
 <h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p>mpirun命令不可用，只能使用srun<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Fatal error <span class="keyword">in</span> MPI_Init:</div><div class="line">Other MPI error, error stack:</div><div class="line">MPIR_Init_thread(411): Initialization failed</div><div class="line">(unknown)(): Other MPI error;</div></pre></td></tr></table></figure></p>
 <p>区分几个概念：tasks、jobs、nodes<br>目前能想到的，可能是因为mpi编译器、执行器的不同导致的</p>
+<p>写了hello world测试程序，依然无法运行，基本可以确定是<em>编译器不同</em>或者<em>命令写法</em>的问题。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -v</div><div class="line">mpicxx for MPICH2 version 1.5.1</div><div class="line">icpc version 14.0.2 (gcc version 4.8.0 compatibility)</div><div class="line"></div><div class="line">$ mpicc -v</div><div class="line">mpicc for MPICH2 version 1.5.1</div><div class="line">icc version 14.0.2 (gcc version 4.8.0 compatibility)</div><div class="line"></div><div class="line">$ srun --mpi list</div><div class="line">or_srun: MPI types are...</div><div class="line">or_srun: mpi/pmi2</div><div class="line">or_srun: mpi/none</div><div class="line">or_srun: mpi/mpichgm</div><div class="line">or_srun: mpi/mpich1_shmem</div><div class="line">or_srun: mpi/mpich1_p4</div><div class="line">or_srun: mpi/lam</div><div class="line">or_srun: mpi/mpichmx</div><div class="line">or_srun: mpi/mvapich</div><div class="line">or_srun: mpi/openmpi</div></pre></td></tr></table></figure></p>
+<p>上面的命令中，pmi2就是MPICH2，编译的时候MPICH2是默认选项<br>mvapich对应MPICH1</p>
+<p>mpirun不可用，但是mpiexec可用，<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mpd &amp;</div><div class="line">$ mpiexec -n 3 <span class="built_in">test</span></div></pre></td></tr></table></figure></p>
+<p>最终解决<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ srun -w ib-node[129-135] ./main</div></pre></td></tr></table></figure></p>
+<ol>
+<li>需要指定具体节点，因为有些节点不可用但没有显示</li>
+<li>之前有时会卡住，这时输入该输入的内容就行，并不是卡住了</li>
+</ol>
 
       
 
@@ -749,15 +757,15 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
             
             <div class="clearfix"></div>

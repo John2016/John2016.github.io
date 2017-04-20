@@ -6,18 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://john2016.github.io">
-  <title>protobuf安装笔记 | 渊澄取映</title>
+  <title>server端环境配置及程序运行 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
 <meta name="keywords" content="环境配置; 测试">
 <meta property="og:type" content="article">
-<meta property="og:title" content="protobuf安装笔记">
+<meta property="og:title" content="server端环境配置及程序运行">
 <meta property="og:url" content="http://john2016.github.io/2017/04/15/protobuf-install/index.html">
 <meta property="og:site_name" content="渊澄取映">
 <meta property="og:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
-<meta property="og:updated_time" content="2017-04-18T10:39:34.728Z">
+<meta property="og:updated_time" content="2017-04-19T12:34:23.300Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="protobuf安装笔记">
+<meta name="twitter:title" content="server端环境配置及程序运行">
 <meta name="twitter:description" content="本文记录安装配置protobuff时遇到的问题及解决方案，基本信息如下：123非root，非sudo没有网络redhat              m4          1.4.18                  autoconf          2.63                  automake          1.11.1                  libtool">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
@@ -161,7 +161,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      protobuf安装笔记
+      server端环境配置及程序运行
     </h1>
   
 
@@ -204,6 +204,7 @@
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -o main *.h *.cc *.cpp `pkg-config --cflags --libs protobuf`</div><div class="line"></div><div class="line">$ srun --job-name=spectra_cluster --label -w ib-node[129-148] --output=ms_out.txt main</div></pre></td></tr></table></figure>
 <p>根据实验结果判断，–output只会在每一个进程结束时写入所有输出，而非实时写入</p>
+<p>注意slurm系统对节点失效情况的处理，–no-kill和–kill，但是当不指定时是什么样不知道，往往会卡死。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">-k, --no-kill</div><div class="line">当分配给作业的节点失效时不要自动终止作业。用户需要自己在节点失效时进行容错。当发生节点失效时，运行在该节点上的活动作业步（通常为 MPI作业）几乎肯定会发生致命错误；但是使用 --no-kill时，分配给作业的节点不会被回收，从而用户可以在剩余的已分配节点上加载新的作业步。</div><div class="line">缺省地，在分配给作业的节点失效时，作业管理系统将终止整个作业并回收节点。</div></pre></td></tr></table></figure></p>
 
       
 
@@ -448,11 +449,11 @@
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
             
             <div class="clearfix"></div>

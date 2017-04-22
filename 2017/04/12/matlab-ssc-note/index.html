@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>matlab笔记 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表示 凸优化 谱聚类   GPCA    新概念His">
+  <meta name="description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘 permute，变换维度顺序，例如234变为342  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="matlab笔记">
 <meta property="og:url" content="http://john2016.github.io/2017/04/12/matlab-ssc-note/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表示 凸优化 谱聚类   GPCA    新概念His">
-<meta property="og:updated_time" content="2017-04-12T12:28:49.562Z">
+<meta property="og:description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘 permute，变换维度顺序，例如234变为342  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表">
+<meta property="og:updated_time" content="2017-04-21T04:39:01.604Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="matlab笔记">
-<meta name="twitter:description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表示 凸优化 谱聚类   GPCA    新概念His">
+<meta name="twitter:description" content="matlab diag(X), 第二个参数缺省时返回对角线元素 pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵 norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方 .* 点乘 permute，变换维度顺序，例如234变为342  JHUvisionlab的相关工作 SSC  三个方面： 稀疏表示、向量表">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -179,6 +179,7 @@
 <li>pinv(X)，返回伪逆矩阵，即非方阵的逆矩阵</li>
 <li>norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方</li>
 <li>.* 点乘</li>
+<li>permute，变换维度顺序，例如2<em>3</em>4变为3<em>4</em>2</li>
 </ul>
 <h2 id="JHUvisionlab的相关工作"><a href="#JHUvisionlab的相关工作" class="headerlink" title="JHUvisionlab的相关工作"></a>JHUvisionlab的相关工作</h2><ul>
 <li>SSC<br>  三个方面：<ol>
@@ -410,15 +411,19 @@
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
               </li>
             
             <div class="clearfix"></div>

@@ -258,7 +258,21 @@
 <ol>
 <li>多说即将关闭</li>
 <li>可选项：<br> <a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a>,<br><br> <a href="https://gentie.163.com/" target="_blank" rel="external">网易云跟帖</a>,<br><br> <a href="https://disqus.com/" target="_blank" rel="external">disqus</a></li>
+<li>添加Disqus评论框，需要首先在_config.yml中添加disqus字段并附上shortname（在disqus申请账号及服务时得到），之后再themes的_config文件中关闭多说评论，最后在themes下的layout目录下的footer.ejs中加入disqus生成的评论框脚本即可。</li>
 </ol>
+<h2 id="添加公式"><a href="#添加公式" class="headerlink" title="添加公式"></a>添加公式</h2><ol>
+<li>简单方法：其他软件（Latex， Word生成公式图片，图片格式导入）</li>
+<li><p>Google Chart服务器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"http://chart.googleapis.com/chart?cht=tx&amp;chl=\Large x=\frac&#123;-b\pm\sqrt&#123;b^2-4ac&#125;&#125;&#123;2a&#125;"</span> style=<span class="string">"border:none;"</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>MathJax引擎，在markdown中用如下代码添加引擎：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
+    $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+    \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+</script>
 
       
 
@@ -401,7 +415,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2>
+        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>生成网络 + 判别网络<br>目标：可以生成图片的模型G</p>
+
       
 
       
@@ -695,8 +710,7 @@
 <li>norm(X, p), 返回矩阵的p范数，，’fro’为Frobenius范数，又被称为Eucliden Norm，是矩阵元素绝对值的平方和开平方</li>
 <li>.* 点乘</li>
 <li>permute，变换维度顺序，例如2<em>3</em>4变为3<em>4</em>2</li>
-</ul>
-<h2 id="JHUvisionlab的相关工作"><a href="#JHUvisionlab的相关工作" class="headerlink" title="JHUvisionlab的相关工作"></a>JHUvisionlab的相关工作</h2><ul>
+<li>svd()函数，<h2 id="JHUvisionlab的相关工作"><a href="#JHUvisionlab的相关工作" class="headerlink" title="JHUvisionlab的相关工作"></a>JHUvisionlab的相关工作</h2></li>
 <li>SSC<br>  三个方面：<ol>
 <li>稀疏表示、向量表示</li>
 <li>凸优化</li>

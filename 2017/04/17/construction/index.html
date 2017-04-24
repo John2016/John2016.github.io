@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://john2016.github.io/2017/04/17/construction/index.html">
 <meta property="og:site_name" content="渊澄取映">
 <meta property="og:description" content="生产环境搭建Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。  github注册，建立page性质的reposity 安装git与配置 安装npm npm安装hexo  第一篇博客 配置_config.yml 自带Hello World预览  主题更改 主题选择 主题配置 头像；关于，打赏">
-<meta property="og:updated_time" content="2017-04-22T02:24:35.858Z">
+<meta property="og:updated_time" content="2017-04-24T12:18:17.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="github+hexo博客搭建笔记">
 <meta name="twitter:description" content="生产环境搭建Windows10，利用了系统中自带的Bash，即Ubuntu环境，博客配置的大部分都在Bash下完成，代码编写相关都用windows中的sublime完成。  github注册，建立page性质的reposity 安装git与配置 安装npm npm安装hexo  第一篇博客 配置_config.yml 自带Hello World预览  主题更改 主题选择 主题配置 头像；关于，打赏">
@@ -198,7 +198,21 @@
 <ol>
 <li>多说即将关闭</li>
 <li>可选项：<br> <a href="http://www.uyan.cc/" target="_blank" rel="external">友言</a>,<br><br> <a href="https://gentie.163.com/" target="_blank" rel="external">网易云跟帖</a>,<br><br> <a href="https://disqus.com/" target="_blank" rel="external">disqus</a></li>
+<li>添加Disqus评论框，需要首先在_config.yml中添加disqus字段并附上shortname（在disqus申请账号及服务时得到），之后再themes的_config文件中关闭多说评论，最后在themes下的layout目录下的footer.ejs中加入disqus生成的评论框脚本即可。</li>
 </ol>
+<h2 id="添加公式"><a href="#添加公式" class="headerlink" title="添加公式"></a>添加公式</h2><ol>
+<li>简单方法：其他软件（Latex， Word生成公式图片，图片格式导入）</li>
+<li><p>Google Chart服务器</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;img src=<span class="string">"http://chart.googleapis.com/chart?cht=tx&amp;chl=\Large x=\frac&#123;-b\pm\sqrt&#123;b^2-4ac&#125;&#125;&#123;2a&#125;"</span> style=<span class="string">"border:none;"</span>&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>MathJax引擎，在markdown中用如下代码添加引擎：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;script type=<span class="string">"text/javascript"</span> src=<span class="string">"http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default"</span>&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=default">
+    $$x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}$$
+    \\(x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\\)
+</script>
 
       
 

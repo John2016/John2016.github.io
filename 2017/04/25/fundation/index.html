@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://john2016.github.io">
-  <title>生成对抗网络GAN笔记 | 渊澄取映</title>
+  <title>SSC相关基础知识 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
-<meta name="keywords" content="Deep Learning">
+  <meta name="description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
+<meta name="keywords" content="基础">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生成对抗网络GAN笔记">
-<meta property="og:url" content="http://john2016.github.io/2017/04/14/GAN/index.html">
+<meta property="og:title" content="SSC相关基础知识">
+<meta property="og:url" content="http://john2016.github.io/2017/04/25/fundation/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
-<meta property="og:updated_time" content="2017-04-25T08:16:12.680Z">
+<meta property="og:description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
+<meta property="og:updated_time" content="2017-04-25T08:16:05.815Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生成对抗网络GAN笔记">
-<meta name="twitter:description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
+<meta name="twitter:title" content="SSC相关基础知识">
+<meta name="twitter:description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -154,27 +154,28 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GAN" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-fundation" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      生成对抗网络GAN笔记
+      SSC相关基础知识
     </h1>
   
 
         
-        <a href="/2017/04/14/GAN/" class="archive-article-date">
-  	<time datetime="2017-04-14T01:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+        <a href="/2017/04/25/fundation/" class="archive-article-date">
+  	<time datetime="2017-04-25T08:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>生成网络 + 判别网络<br>目标：可以生成图片的模型G<br>目标函数：最大化判别器D的准确率，最小化生成器的生成误差<br>训练过程中交替进行梯度上升和梯度下降<br>DCGAN是结合CNN的重要发展</p>
+        <h2 id="拉普拉斯矩阵及其应用-Laplacian-Matrix"><a href="#拉普拉斯矩阵及其应用-Laplacian-Matrix" class="headerlink" title="拉普拉斯矩阵及其应用(Laplacian Matrix)"></a>拉普拉斯矩阵及其应用(Laplacian Matrix)</h2><h2 id="海森矩阵及其应用-Hessian-Matrix"><a href="#海森矩阵及其应用-Hessian-Matrix" class="headerlink" title="海森矩阵及其应用(Hessian Matrix)"></a>海森矩阵及其应用(Hessian Matrix)</h2><h2 id="Sylvester-equation"><a href="#Sylvester-equation" class="headerlink" title="Sylvester equation"></a>Sylvester equation</h2><p>Bartels-Stewart是一个经典的求解算法</p>
+<h2 id="Affine-matrix"><a href="#Affine-matrix" class="headerlink" title="Affine matrix"></a>Affine matrix</h2><p>可以由自表达矩阵构建，有一个经典公式</p>
 
       
 
@@ -214,7 +215,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
         		</li>
       		
 		</ul>
@@ -270,7 +271,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/14/GAN/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/25/fundation/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,20 +285,15 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/13/optimize-note/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/25/paral-debug/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          优化学习笔记
+          并行调试笔记
         
       </div>
     </a>
   
-  
-    <a href="/2017/04/15/protobuf-install/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">server端环境配置及程序运行</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 

@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://john2016.github.io">
-  <title>生成对抗网络GAN笔记 | 渊澄取映</title>
+  <title>并行调试笔记 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
-<meta name="keywords" content="Deep Learning">
+  <meta name="description" content="环境linux 14，MPI 3.0.4 可选工具： gdb totalview Parallel debugger（IBM） Allinea DDT，牛津 visual studio Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区 Parallel Application Debugger，可以显示message queue的状况，包括deadlock等  gdb调">
+<meta name="keywords" content="开发">
 <meta property="og:type" content="article">
-<meta property="og:title" content="生成对抗网络GAN笔记">
-<meta property="og:url" content="http://john2016.github.io/2017/04/14/GAN/index.html">
+<meta property="og:title" content="并行调试笔记">
+<meta property="og:url" content="http://john2016.github.io/2017/04/25/paral-debug/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
-<meta property="og:updated_time" content="2017-04-25T08:16:12.680Z">
+<meta property="og:description" content="环境linux 14，MPI 3.0.4 可选工具： gdb totalview Parallel debugger（IBM） Allinea DDT，牛津 visual studio Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区 Parallel Application Debugger，可以显示message queue的状况，包括deadlock等  gdb调">
+<meta property="og:updated_time" content="2017-04-25T08:16:11.383Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="生成对抗网络GAN笔记">
-<meta name="twitter:description" content="基本目标是想将深度学习用于Consencus  Spectra的构建中GAN生成网络 + 判别网络目标：可以生成图片的模型G目标函数：最大化判别器D的准确率，最小化生成器的生成误差训练过程中交替进行梯度上升和梯度下降DCGAN是结合CNN的重要发展">
+<meta name="twitter:title" content="并行调试笔记">
+<meta name="twitter:description" content="环境linux 14，MPI 3.0.4 可选工具： gdb totalview Parallel debugger（IBM） Allinea DDT，牛津 visual studio Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区 Parallel Application Debugger，可以显示message queue的状况，包括deadlock等  gdb调">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -154,27 +154,49 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-GAN" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-paral-debug" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      生成对抗网络GAN笔记
+      并行调试笔记
     </h1>
   
 
         
-        <a href="/2017/04/14/GAN/" class="archive-article-date">
-  	<time datetime="2017-04-14T01:48:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-14</time>
+        <a href="/2017/04/25/paral-debug/" class="archive-article-date">
+  	<time datetime="2017-04-25T03:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>生成网络 + 判别网络<br>目标：可以生成图片的模型G<br>目标函数：最大化判别器D的准确率，最小化生成器的生成误差<br>训练过程中交替进行梯度上升和梯度下降<br>DCGAN是结合CNN的重要发展</p>
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>linux 14，<br>MPI 3.0.4</p>
+<h2 id="可选工具："><a href="#可选工具：" class="headerlink" title="可选工具："></a>可选工具：</h2><ol>
+<li>gdb</li>
+<li>totalview</li>
+<li>Parallel debugger（IBM）</li>
+<li>Allinea DDT，牛津</li>
+<li>visual studio</li>
+<li>Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区</li>
+<li>Parallel Application Debugger，可以显示message queue的状况，包括deadlock等</li>
+</ol>
+<h2 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h2><p><a href="https://segmentfault.com/a/1190000000447786" target="_blank" rel="external">参考链接</a></p>
+<ol>
+<li><p>源代码中添加</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> MPI_DEBUG</span></div><div class="line"><span class="keyword">int</span> gdb_break = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span>(gdb_break) &#123;&#125;;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>编译时添加选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -DMPI_DEBUG -g ***</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开gdb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(gdb) shell ps aux | grep &lt;process-name&gt;</div><div class="line">(gdb) attach &lt;process-id&gt;</div><div class="line">(gdb) <span class="built_in">set</span> gdb_break = 0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>error: no debugging symbols found<br>编译时加-q选项没用</p>
 
       
 
@@ -214,7 +236,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Deep Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开发</a>
         		</li>
       		
 		</ul>
@@ -270,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/14/GAN/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://john2016.github.io/2017/04/25/paral-debug/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -284,18 +306,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/04/13/optimize-note/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/04/21/admm/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          优化学习笔记
+          优化算法
         
       </div>
     </a>
   
   
-    <a href="/2017/04/15/protobuf-install/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">server端环境配置及程序运行</div>
+    <a href="/2017/04/25/fundation/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">SSC相关基础知识</div>
       <i class="icon-circle-right"></i>
     </a>
   

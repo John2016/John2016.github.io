@@ -151,6 +151,153 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-fundation" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/25/fundation/">SSC相关基础知识</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/25/fundation/" class="archive-article-date">
+  	<time datetime="2017-04-25T08:01:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="拉普拉斯矩阵及其应用-Laplacian-Matrix"><a href="#拉普拉斯矩阵及其应用-Laplacian-Matrix" class="headerlink" title="拉普拉斯矩阵及其应用(Laplacian Matrix)"></a>拉普拉斯矩阵及其应用(Laplacian Matrix)</h2><h2 id="海森矩阵及其应用-Hessian-Matrix"><a href="#海森矩阵及其应用-Hessian-Matrix" class="headerlink" title="海森矩阵及其应用(Hessian Matrix)"></a>海森矩阵及其应用(Hessian Matrix)</h2><h2 id="Sylvester-equation"><a href="#Sylvester-equation" class="headerlink" title="Sylvester equation"></a>Sylvester equation</h2><p>Bartels-Stewart是一个经典的求解算法</p>
+<h2 id="Affine-matrix"><a href="#Affine-matrix" class="headerlink" title="Affine matrix"></a>Affine matrix</h2><p>可以由自表达矩阵构建，有一个经典公式</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">基础</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/25/fundation/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
+    <article id="post-paral-debug" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/04/25/paral-debug/">并行调试笔记</a>
+    </h1>
+  
+
+        
+        <a href="/2017/04/25/paral-debug/" class="archive-article-date">
+  	<time datetime="2017-04-25T03:29:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-04-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><p>linux 14，<br>MPI 3.0.4</p>
+<h2 id="可选工具："><a href="#可选工具：" class="headerlink" title="可选工具："></a>可选工具：</h2><ol>
+<li>gdb</li>
+<li>totalview</li>
+<li>Parallel debugger（IBM）</li>
+<li>Allinea DDT，牛津</li>
+<li>visual studio</li>
+<li>Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区</li>
+<li>Parallel Application Debugger，可以显示message queue的状况，包括deadlock等</li>
+</ol>
+<h2 id="gdb调试"><a href="#gdb调试" class="headerlink" title="gdb调试"></a>gdb调试</h2><p><a href="https://segmentfault.com/a/1190000000447786" target="_blank" rel="external">参考链接</a></p>
+<ol>
+<li><p>源代码中添加</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> MPI_DEBUG</span></div><div class="line"><span class="keyword">int</span> gdb_break = <span class="number">1</span>;</div><div class="line"><span class="keyword">while</span>(gdb_break) &#123;&#125;;</div><div class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></div></pre></td></tr></table></figure>
+</li>
+<li><p>编译时添加选项</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ mpicxx -DMPI_DEBUG -g ***</div></pre></td></tr></table></figure>
+</li>
+<li><p>打开gdb</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(gdb) shell ps aux | grep &lt;process-name&gt;</div><div class="line">(gdb) attach &lt;process-id&gt;</div><div class="line">(gdb) <span class="built_in">set</span> gdb_break = 0</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>error: no debugging symbols found<br>编译时加-q选项没用</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">开发</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/04/25/paral-debug/">展开 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+  
     <article id="post-admm" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -415,7 +562,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>生成网络 + 判别网络<br>目标：可以生成图片的模型G</p>
+        <h2 id="基本目标是想将深度学习用于Consencus-Spectra的构建中"><a href="#基本目标是想将深度学习用于Consencus-Spectra的构建中" class="headerlink" title="基本目标是想将深度学习用于Consencus  Spectra的构建中"></a>基本目标是想将深度学习用于Consencus  Spectra的构建中</h2><h2 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h2><p>生成网络 + 判别网络<br>目标：可以生成图片的模型G<br>目标函数：最大化判别器D的准确率，最小化生成器的生成误差<br>训练过程中交替进行梯度上升和梯度下降<br>DCGAN是结合CNN的重要发展</p>
 
       
 
@@ -464,7 +611,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2017/04/13/optimize-note/">优化笔记</a>
+      <a class="article-title" href="/2017/04/13/optimize-note/">优化学习笔记</a>
     </h1>
   
 
@@ -861,11 +1008,7 @@ s.setAttribute('data-timestamp', +new Date());
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -873,7 +1016,19 @@ s.setAttribute('data-timestamp', +new Date());
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">开发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

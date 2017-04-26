@@ -15,7 +15,7 @@
 <meta property="og:url" content="http://john2016.github.io/2017/04/25/paral-debug/index.html">
 <meta property="og:site_name" content="渊澄取映">
 <meta property="og:description" content="环境linux 14，MPI 3.0.4 可选工具： gdb totalview Parallel debugger（IBM） Allinea DDT，牛津 visual studio Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区 Parallel Application Debugger，可以显示message queue的状况，包括deadlock等  gdb调">
-<meta property="og:updated_time" content="2017-04-25T08:16:11.383Z">
+<meta property="og:updated_time" content="2017-04-26T12:20:26.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="并行调试笔记">
 <meta name="twitter:description" content="环境linux 14，MPI 3.0.4 可选工具： gdb totalview Parallel debugger（IBM） Allinea DDT，牛津 visual studio Valgrind Memcheck 检查内存情况，包括MPI发送接收的缓冲区 Parallel Application Debugger，可以显示message queue的状况，包括deadlock等  gdb调">
@@ -196,7 +196,13 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">(gdb) shell ps aux | grep &lt;process-name&gt;</div><div class="line">(gdb) attach &lt;process-id&gt;</div><div class="line">(gdb) <span class="built_in">set</span> gdb_break = 0</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>error: no debugging symbols found<br>编译时加-q选项没用</p>
+<p>error: no debugging symbols found<br>编译时加-g选项没用</p>
+<p>几个参考方法：</p>
+<ol>
+<li>-c，-o，即编译和连接分开使用</li>
+<li>调整编译选项和-g的顺序</li>
+<li>stripping the binary with the strip command.</li>
+</ol>
 
       
 
@@ -459,11 +465,15 @@ s.setAttribute('data-timestamp', +new Date());
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -471,15 +481,11 @@ s.setAttribute('data-timestamp', +new Date());
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

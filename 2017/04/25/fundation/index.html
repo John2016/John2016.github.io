@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>SSC相关基础知识 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
+  <meta name="description" content="缺省符号表邻接矩阵    W度矩阵      D拉普拉斯矩阵 L    基础相似：所谓相似矩阵，就是同一个线性变换的不同基的描述矩阵。这就是相似变换的几何意义。将矩阵对角化在控制工程和机械振动领域具有将复杂方程解耦的妙用！总而言之，相似变换是为了简化计算。标准型：一个方阵在复数域一定可以化成Jordan标准型特征值：当矩阵表示线性变换时，特征值就是变换的本质！用特征函数解的方程也是最简洁的一个工程">
 <meta name="keywords" content="基础">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SSC相关基础知识">
 <meta property="og:url" content="http://john2016.github.io/2017/04/25/fundation/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
-<meta property="og:updated_time" content="2017-04-25T08:16:05.815Z">
+<meta property="og:description" content="缺省符号表邻接矩阵    W度矩阵      D拉普拉斯矩阵 L    基础相似：所谓相似矩阵，就是同一个线性变换的不同基的描述矩阵。这就是相似变换的几何意义。将矩阵对角化在控制工程和机械振动领域具有将复杂方程解耦的妙用！总而言之，相似变换是为了简化计算。标准型：一个方阵在复数域一定可以化成Jordan标准型特征值：当矩阵表示线性变换时，特征值就是变换的本质！用特征函数解的方程也是最简洁的一个工程">
+<meta property="og:updated_time" content="2017-04-26T12:20:31.952Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SSC相关基础知识">
-<meta name="twitter:description" content="拉普拉斯矩阵及其应用(Laplacian Matrix)海森矩阵及其应用(Hessian Matrix)Sylvester equationBartels-Stewart是一个经典的求解算法 Affine matrix可以由自表达矩阵构建，有一个经典公式">
+<meta name="twitter:description" content="缺省符号表邻接矩阵    W度矩阵      D拉普拉斯矩阵 L    基础相似：所谓相似矩阵，就是同一个线性变换的不同基的描述矩阵。这就是相似变换的几何意义。将矩阵对角化在控制工程和机械振动领域具有将复杂方程解耦的妙用！总而言之，相似变换是为了简化计算。标准型：一个方阵在复数域一定可以化成Jordan标准型特征值：当矩阵表示线性变换时，特征值就是变换的本质！用特征函数解的方程也是最简洁的一个工程">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -174,7 +174,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="拉普拉斯矩阵及其应用-Laplacian-Matrix"><a href="#拉普拉斯矩阵及其应用-Laplacian-Matrix" class="headerlink" title="拉普拉斯矩阵及其应用(Laplacian Matrix)"></a>拉普拉斯矩阵及其应用(Laplacian Matrix)</h2><h2 id="海森矩阵及其应用-Hessian-Matrix"><a href="#海森矩阵及其应用-Hessian-Matrix" class="headerlink" title="海森矩阵及其应用(Hessian Matrix)"></a>海森矩阵及其应用(Hessian Matrix)</h2><h2 id="Sylvester-equation"><a href="#Sylvester-equation" class="headerlink" title="Sylvester equation"></a>Sylvester equation</h2><p>Bartels-Stewart是一个经典的求解算法</p>
+        <h2 id="缺省符号表"><a href="#缺省符号表" class="headerlink" title="缺省符号表"></a>缺省符号表</h2><p>邻接矩阵    W<br>度矩阵      D<br>拉普拉斯矩阵 L   </p>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><p><em>相似：</em>所谓相似矩阵，就是同一个线性变换的不同基的描述矩阵。这就是相似变换的几何意义。<br>将矩阵对角化在控制工程和机械振动领域具有将复杂方程解耦的妙用！总而言之，相似变换是为了简化计算。<br><em>标准型：</em>一个方阵在复数域一定可以化成Jordan标准型<br><em>特征值：</em>当矩阵表示线性变换时，特征值就是变换的本质！<br>用特征函数解的方程也是最简洁的<br>一个工程师总是试图使他的桥梁或他的火箭的自然频率远离风的频率或液体燃料的频率；而在另一种极端情况，一个证券经纪人则尽毕生精力于努力到达市场的自然频率线。特征值是几乎任何一个动力系统的最重要的特征。（特征值与频率）<br>对于一个线性系统，总可以把高阶的方程转化成一个方程组描述，这被称为状态空间描述<br>特征分解，就是寻找标准正交基，特征值代表矩阵在每个基上的投影长度<br>特征值越大，说明该方向上的方差、功率和信息量越多<br>对函数，意味着该方向上的导数越大<br>对数据挖掘，意味着该方向上的信息量越大，可用于降维<br>特征值决定了变换中在k个维度上的拉伸和压缩，其余部分决定了球体的旋转</p>
+<h3 id="奇异值"><a href="#奇异值" class="headerlink" title="奇异值"></a>奇异值</h3><p>三次方复杂度<br>图像压缩、求矩阵伪逆</p>
+<h3 id="特征值"><a href="#特征值" class="headerlink" title="特征值"></a>特征值</h3><h2 id="拉普拉斯矩阵及其应用-Laplacian-Matrix"><a href="#拉普拉斯矩阵及其应用-Laplacian-Matrix" class="headerlink" title="拉普拉斯矩阵及其应用(Laplacian Matrix)"></a>拉普拉斯矩阵及其应用(Laplacian Matrix)</h2><p>别名：admittance matrix, Kirchhoff matrix or discrete Laplacian<br>L = D - W<br>对称半正定<br>的最小特征值是0，相应的特征向量是单位向量（？）<br>一个重要性质，可用于推导其与cut的关系</p>
+<p>###用途：</p>
+<ol>
+<li>can be used to calculate the number of spanning trees for a given graph</li>
+<li>L的特征值可用于cut<blockquote>
+<p>求拉普拉斯矩阵的前K个特征值，再对前K个特征值对应的特征向量进行 K-means 聚类。而两类的问题也很容易推广到 k 类的问题，即求特征值并取前 K 个最小的，将对应的特征向量排列起来，再进行K-means聚类（N个数据）。</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="衍生"><a href="#衍生" class="headerlink" title="衍生"></a>衍生</h3><p>symmetric normalized Laplacian matrix<br>Random walk normalized Laplacian</p>
+<h2 id="海森矩阵及其应用-Hessian-Matrix"><a href="#海森矩阵及其应用-Hessian-Matrix" class="headerlink" title="海森矩阵及其应用(Hessian Matrix)"></a>海森矩阵及其应用(Hessian Matrix)</h2><p>多元函数的二阶偏导数构成的方阵<br>用于最速下降优化<br>如果H(M)是正定矩阵，则临界点M处是一个局部的极小值。<br>如果H(M)是负定矩阵，则临界点M处是一个局部的极大值。<br>如果H(M)是不定矩阵，则临界点M处不是极值。</p>
+<h2 id="Sylvester-equation"><a href="#Sylvester-equation" class="headerlink" title="Sylvester equation"></a>Sylvester equation</h2><p>Bartels-Stewart是一个经典的求解算法</p>
 <h2 id="Affine-matrix"><a href="#Affine-matrix" class="headerlink" title="Affine matrix"></a>Affine matrix</h2><p>可以由自表达矩阵构建，有一个经典公式</p>
 
       
@@ -433,11 +447,15 @@ s.setAttribute('data-timestamp', +new Date());
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -445,15 +463,11 @@ s.setAttribute('data-timestamp', +new Date());
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

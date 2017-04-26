@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://john2016.github.io">
   <title>优化学习笔记 | 渊澄取映</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日">
+  <meta name="description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日正则1范数和0范数可以实现稀疏，1因具有比L0更好的">
 <meta name="keywords">
 <meta property="og:type" content="article">
 <meta property="og:title" content="优化学习笔记">
 <meta property="og:url" content="http://john2016.github.io/2017/04/13/optimize-note/index.html">
 <meta property="og:site_name" content="渊澄取映">
-<meta property="og:description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日">
-<meta property="og:updated_time" content="2017-04-25T08:16:10.150Z">
+<meta property="og:description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日正则1范数和0范数可以实现稀疏，1因具有比L0更好的">
+<meta property="og:updated_time" content="2017-04-26T12:20:28.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="优化学习笔记">
-<meta name="twitter:description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日">
+<meta name="twitter:description" content="–          –                  Lagrange          等式约束                  KKT          含有不等式约束       这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。  拉格朗日正则1范数和0范数可以实现稀疏，1因具有比L0更好的">
   
     <link rel="alternative" href="/atom.xml" title="渊澄取映" type="application/atom+xml">
   
@@ -178,7 +178,8 @@
 <blockquote>
 <p>这两个方法求得的结果只是必要条件，只有当是凸函数的情况下，才能保证是充分必要条件。KKT条件是拉格朗日乘子法的泛化。</p>
 </blockquote>
-<h2 id="拉格朗日"><a href="#拉格朗日" class="headerlink" title="拉格朗日"></a>拉格朗日</h2>
+<h2 id="拉格朗日"><a href="#拉格朗日" class="headerlink" title="拉格朗日"></a>拉格朗日</h2><h2 id="正则"><a href="#正则" class="headerlink" title="正则"></a>正则</h2><p>1范数和0范数可以实现稀疏，1因具有比L0更好的优化求解特性而被广泛应用。然后L2范数，是下面这么理解的，我就直接查别人给的解释好了，反正简单，就不自己动脑子解释了：<br>一种约束，起引导作用，可能是一些先验知识，运算中，还可以防止矩阵不可逆</p>
+
       
 
       
@@ -429,11 +430,15 @@ s.setAttribute('data-timestamp', +new Date());
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">基础</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -441,15 +446,11 @@ s.setAttribute('data-timestamp', +new Date());
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">survey mark</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">环境配置; 测试</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Deep Learning</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>
